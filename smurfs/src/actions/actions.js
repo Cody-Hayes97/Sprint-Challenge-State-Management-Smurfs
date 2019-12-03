@@ -17,17 +17,18 @@ export const getSmurfData = () => dispatch => {
   });
 };
 
-export const postSmurfData = smurf => dispatch => {
+export const postSmurfData = data => dispatch => {
+  console.log("this is post action");
   dispatch({ type: LOAD_START });
   axios
-    .post("http://localhost:3333/smurfs", smurf)
+    .post("http://localhost:3333/smurfs", data)
     .then(response => {
       dispatch({
         type: ADD_POST,
         payload: response.data
       });
       console.log(response);
-      console.log(smurf);
+      console.log(data);
     })
     .catch(err => {
       console.log(err);

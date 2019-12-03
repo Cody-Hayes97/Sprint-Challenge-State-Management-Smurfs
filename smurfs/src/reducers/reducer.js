@@ -2,12 +2,14 @@ import { LOAD_START, ADD_POST } from "../actions/actions";
 
 export const initialState = {
   isLoading: false,
-  smurf: {
-    name: "",
-    age: 0,
-    height: "",
-    id: 123
-  }
+  smurf: [
+    {
+      name: "",
+      age: 0,
+      height: "",
+      id: null
+    }
+  ]
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,12 +22,8 @@ const reducer = (state = initialState, action) => {
     case ADD_POST:
       return {
         ...state,
-        smurf: {
-          ...state.smurf,
-          name: action.payload,
-          age: action.payload,
-          height: action.payload
-        },
+        smurf: action.payload,
+
         isLoading: false
       };
     default:
