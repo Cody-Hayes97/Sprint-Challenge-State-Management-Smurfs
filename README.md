@@ -23,10 +23,24 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+the context API allows us to build an app with complex state without having to get lost in all the prop drilling. we can also pass data from child components to parents
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+the store is the global storage of the state in our app it is reference by every stateful components in our app, actions are simply pieces of logic that will execute when the function they are in runs, the reducer is a function that the actions and state get passed into before anything else. the reducer will perform a different task based on what is dipatched to it
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+application state is the state that can be accessed anywhere in our app no matter where it is. Components state is state that can only be accessed by certains components i.e. the component the slice of state was made inside of. its a better time to use application state if youre refering to the global store as an example and component state is good to use if you are making a form and need to change something simple with useState
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+a thunk is a function that returns another function. the redux thunk allows us to use another set of parameters so we can use dispatch in our redux actions
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+well honestly i prefer normal useState because it is really easy or useContext because everyone loves it but im the most familiar with redux at this point. i have to refresh myself on useContext
 
 ## Project Set Up
 
