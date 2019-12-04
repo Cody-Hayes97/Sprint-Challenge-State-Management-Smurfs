@@ -1,8 +1,10 @@
 import React from "react";
+import { toggleSelected } from "../actions/actions";
 
 export const Smurf = props => {
   return (
     <div
+      onClick={() => [toggleSelected()]}
       style={{
         width: "50%",
         margin: "3% 0 3% 25%",

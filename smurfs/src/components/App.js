@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 
 import { connect } from "react-redux";
-import { getSmurfData, postSmurfData } from "../actions/actions";
+import {
+  getSmurfData,
+  postSmurfData,
+  toggleSelected
+} from "../actions/actions";
 import Form from "./Form";
 import { SmurfList } from "./SmurfList";
 
@@ -56,7 +60,12 @@ function App(props) {
       >
         Add your Smurf!
       </Button>
-      <SmurfList smurfs={props.smurf} />
+      <SmurfList
+        smurfs={props.smurf}
+        onclick={() => {
+          props.toggleSelected();
+        }}
+      />
     </div>
   );
 }

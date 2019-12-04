@@ -1,4 +1,5 @@
-import { LOAD_START, ADD_POST } from "../actions/actions";
+import { LOAD_START, ADD_POST, SELECT_SMURF } from "../actions/actions";
+const REMOVE_SMURF = "REMOVE_SMURF";
 
 export const initialState = {
   isLoading: false,
@@ -7,6 +8,7 @@ export const initialState = {
       name: "",
       age: "",
       height: "",
+      selected: false,
       id: null
     }
   ]
@@ -26,6 +28,23 @@ const reducer = (state = initialState, action) => {
 
         isLoading: false
       };
+    case SELECT_SMURF:
+      console.log("im here");
+      return {
+        smurf: state.smurf.map((smurfs, idx) =>
+          idx === action.idx
+            ? { ...smurfs, selected: !smurfs.selected }
+            : smurfs
+        )
+      };
+    case REMOVE_SMURF:
+      return {
+        ...state,
+        smurf: state.smurf.filter(item => {
+          return item.selected === false;
+        })
+      };
+
     default:
       return state;
   }
