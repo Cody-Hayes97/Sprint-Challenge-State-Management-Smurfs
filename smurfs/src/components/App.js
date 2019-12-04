@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Button } from "reactstrap";
 
 import { connect } from "react-redux";
 import { getSmurfData, postSmurfData } from "../actions/actions";
@@ -33,23 +34,28 @@ function App(props) {
 
   return (
     <div className="App">
+      <h1 style={{ fontFamily: "Odibee Sans", marginTop: "2%" }}>
+        Smurf Maker
+      </h1>
       <Form formValue={formValue} handleChange={handleChange} />
 
-      <button
+      {/* <Button
+        color="success"
         onClick={() => {
           props.getSmurfData();
           console.log(props.smurf.name);
         }}
       >
         click for data
-      </button>
-      <button
+      </Button> */}
+      <Button
+        color="success"
         onClick={() => {
           onSubmit();
         }}
       >
-        click for post
-      </button>
+        Add your Smurf!
+      </Button>
       <SmurfList smurfs={props.smurf} />
     </div>
   );

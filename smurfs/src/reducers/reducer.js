@@ -5,7 +5,7 @@ export const initialState = {
   smurf: [
     {
       name: "",
-      age: 0,
+      age: "",
       height: "",
       id: null
     }
